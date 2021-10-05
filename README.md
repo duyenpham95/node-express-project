@@ -20,5 +20,6 @@ npx nodemon index.js
 #### Tech note:
 
 * Joi for validation
-* nodemon for run application without manually restarting while development
+* Nodemon to watch for changes in files and automatically restart the
+node process
 * Using ES6 destructure object for cleaner code 
