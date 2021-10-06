@@ -18,9 +18,12 @@ instead of: node index.js
 npx nodemon index.js
 ```
 #### Tech note:
-
-* Joi for validation
+* config: for configuration with env variables
+* Joi for schema validation
 * Nodemon to watch for changes in files and automatically restart the
 node process
 * Using ES6 destructure object for cleaner code 
-* Using middleware functions: helmet, morgan, ...
+* Using middleware functions: 
+- helmet: HTTP Response Header setting
+- morgan: logging
+* Debug which specific namespace for a module
