@@ -23,3 +23,4 @@ npx nodemon index.js
 * Nodemon to watch for changes in files and automatically restart the
 node process
 * Using ES6 destructure object for cleaner code 
+* Using middleware functions: helmet, morgan, ...
