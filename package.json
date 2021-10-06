@@ -19,7 +19,9 @@
   "homepage": "https://github.com/duyenpham95/node-express-project#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "helmet": "^4.6.0",
     "joi": "^17.4.2",
+    "morgan": "^1.10.0",
     "nodemon": "^2.0.13"
   }
 }

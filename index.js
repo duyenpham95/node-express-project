@@ -1,7 +1,28 @@
+const helmet = require('helmet');
+const morgan = require('morgan');
+
 const Joi = require('joi');
 const express = require('express');
 const app = express();
-app.use(express.json());
+
+// Middleware functions run in sequence
+app.use(express.json()); // This is a built-in middleware function, populate json request
+app.use(express.static('static-content'));
+app.use(helmet());       // Secure your Express apps by setting various HTTP headers
+app.use(morgan('tiny')); // logging with tiny simple format
+
+// Custom middleware function
+app.use((req, res, next) => {
+    console.log('Logging middleware');
+    next();
+});
+
+app.use((req, res, next) => {
+    console.log('Authentication...');
+    next();
+});
+// End middleware functions
+
 
 const products = [
     { id: 1, name: 'TV'},
