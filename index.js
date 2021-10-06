@@ -1,3 +1,4 @@
+// load modules
 const startupDebugger = require('debug')('app:startup');
 const dbDebugger = require('debug')('app:db');
 
@@ -25,10 +26,6 @@ app.use(express.json()); // This is a built-in middleware function, populate jso
 app.use(express.static('static-content'));
 app.use(helmet());       // Secure your Express apps by setting various HTTP headers
 
-app.use('/', home);
-app.use('/api/products', products); // Highlight this - Use router to structure our code
-
-
 console.log('Enviroment ', app.get('env'));
 if (app.get('env') == 'development') {
     app.use(morgan('tiny')); // logging with tiny simple format
@@ -39,15 +36,13 @@ dbDebugger('Connected to db .....');    // works if export DEBUG=app:db (or expo
 
 // Custom middleware function
 app.use((req, res, next) => {
-    console.log('Logging middleware');
-    next();
-});
-
-app.use((req, res, next) => {
-    console.log('Authentication...');
+    console.log('Logging or Authentication middleware');
     next();
 });
 // End middleware functions
+
+app.use('/', home);
+app.use('/api/products', products); // Highlight this - Use router to structure our code
 
 const port = process.env.PORT || 3000;
 app.listen(3000, () => console.log(`Listening on: ${port}`));
