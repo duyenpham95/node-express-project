@@ -8,6 +8,8 @@ const morgan = require('morgan');
 
 const express = require('express');
 const app = express();
+
+const home = require('./routes/home');
 const products = require('./routes/products');
 
 // Setting the env: 
@@ -23,6 +25,7 @@ app.use(express.json()); // This is a built-in middleware function, populate jso
 app.use(express.static('static-content'));
 app.use(helmet());       // Secure your Express apps by setting various HTTP headers
 
+app.use('/', home);
 app.use('/api/products', products); // Highlight this - Use router to structure our code
 
 
@@ -45,11 +48,6 @@ app.use((req, res, next) => {
     next();
 });
 // End middleware functions
-
-// Define routes
-app.get('/', (req, res) => {
-    res.send('Helllo from Duyen');
-});
 
 const port = process.env.PORT || 3000;
 app.listen(3000, () => console.log(`Listening on: ${port}`));
