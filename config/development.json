@@ -1,0 +1,6 @@
+{
+    "name": "Dev will override default property",
+    "mail": {
+        "host": "dev-server"
+    }
+}

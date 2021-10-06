@@ -1,0 +1,6 @@
+{
+    "name": "Prod will override default property",
+    "mail": {
+        "host": "prod-server"
+    }
+}
