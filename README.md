@@ -20,8 +20,9 @@ npx nodemon index.js
 #### Tech note:
 * config: for configuration with env variables
 * Joi for schema validation
-* Nodemon to watch for changes in files and automatically restart the
+* nodemon to watch for changes in files and automatically restart the
 node process
+* Using Router to structure and clean code
 * Using ES6 destructure object for cleaner code 
 * Using middleware functions: 
 - helmet: HTTP Response Header setting
